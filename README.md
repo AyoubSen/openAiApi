@@ -22,3 +22,5 @@ docker compose up
 ```bash
 { "message": "____" }
 ```
+
+you won't need to add any authorization or Headers on Postman since it's added in the code.
