@@ -18,7 +18,6 @@ public class OpenAiServiceImpl implements OpenAiService {
 
     private static RestTemplate restTemplate = new RestTemplate();
 
-    //    Build headers
     public HttpEntity<OpenAiRequest> buildHttpEntity(OpenAiRequest msgRequest) {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.parseMediaType(OpenAiConfig.MEDIA_TYPE));
@@ -26,7 +25,6 @@ public class OpenAiServiceImpl implements OpenAiService {
         return new HttpEntity<>(msgRequest, headers);
     }
 
-    //    Generate response
     public OpenAiResponse getResponse(HttpEntity<OpenAiRequest> chatRequestHttpEntity) {
         ResponseEntity<OpenAiResponse> responseEntity = restTemplate.postForEntity(
                 OpenAiConfig.URL,
